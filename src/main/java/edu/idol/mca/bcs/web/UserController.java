@@ -48,8 +48,8 @@ public class UserController {
 		if(errorMap!=null) return errorMap;
 		User savedUser= userService.saveUser(user);
 
-		//return new ResponseEntity<User>(savedUser,HttpStatus.OK);
-		return new ResponseEntity<String>("Registration Successful",HttpStatus.OK);
+		return new ResponseEntity<User>(savedUser,HttpStatus.OK);
+		//return new ResponseEntity<String>("Registration Successful",HttpStatus.OK);
 	}
 	
 	

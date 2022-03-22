@@ -26,9 +26,7 @@ public class User {
 	private long id;
 	
 	@NotBlank(message = "Please Enter Name")
-	private String firstName;
-	@NotBlank(message = "Please Enter Name")
-	private String lastName;
+	private String name;
 	
 	@NotBlank(message = "Please Enter Login Name")
 	@Column(unique = true, updatable = false)
@@ -47,22 +45,19 @@ public class User {
 	}
 	
 	
-	public User(long id, String firstName, String lastName, String loginName, String pwd) {
+	public User(long id, String name, String loginName, String pwd) {
 		super();
 		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.name = name;
 		this.loginName = loginName;
 		this.pwd = pwd;
 	}
 
 
-	public User(long id, String firstName, String lastName, String loginName, String pwd, List<Address> address) {
+	public User(long id, String name, String loginName, String pwd, List<Address> address) {
 		super();
 		this.id = id;
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.name = name;
 		this.loginName = loginName;
 		this.pwd = pwd;
 		this.address = address;
@@ -79,25 +74,13 @@ public class User {
 	}
 
 
-
-
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
 
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-
-	public String getLastName() {
-		return lastName;
-	}
-
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 

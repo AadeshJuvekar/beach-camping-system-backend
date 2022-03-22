@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 		public User saveUser(User user) {
 			
 			//Check for null values
-			if(user.getLoginName()==null|| user.getPwd()==null||user.getFirstName()==null) {
+			if(user.getLoginName()==null|| user.getPwd()==null||user.getName()==null) {
 				throw new NullPointerException("Please fill the required fields");
 			}
 			
@@ -111,7 +111,7 @@ public class UserServiceImpl implements UserService {
 
 		private User addUserInSession(User user, HttpSession session) {
 			session.setAttribute("userId", user.getId());
-			session.setAttribute("userName", user.getFirstName());
+			session.setAttribute("userName", user.getName());
 			session.setAttribute("loginName", user.getLoginName());	
 			return user;
 		}
